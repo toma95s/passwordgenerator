@@ -40,11 +40,22 @@ function generatePassword(){
         //at least one character type should be selected
       //a password is generated that matches the selected criteria
         //How?
+    var passwordlengthrand = ""
+    for(var i= 0; i<charlen; i++){
+      var  passwordlengthrand = userChoice[Math.floor(Math.random()* userChoice.length)];
+       console.log(passwordlengthrand);
+    }
+    return passwordlengthrand;
 };
 
 function issuePrompts(){
    characterLengthPrompt();
-   //asked for character type???
+   confirmSpecial();
+   confirmLowercase();
+   confirmUppercase();
+   confirmNumber();
+   validateUserChoice();
+   
 
 };
 
