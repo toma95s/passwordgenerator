@@ -50,14 +50,11 @@ function generatePassword(){
 
 function issuePrompts(){
    characterLengthPrompt();
-   confirmSpecial();
-   confirmLowercase();
-   confirmUppercase();
-   confirmNumber();
    validateUserChoice();
    
 
 };
+
 
 function characterLengthPrompt(){
   //at least 8 characters and no more than 128 characters???
@@ -65,9 +62,9 @@ function characterLengthPrompt(){
   charlen = parseInt(prompt("How many characters is your password? This password must be 8 characters and no more than 128 characters."));
   while(charlen < 8 || charlen > 128){
       alert("This password has the incorrect amount of characters")
-      charlen = parseInt(prompt("Please choose a passowrd that has characters between 8 and 128."));
+      charlen = parseInt(prompt("Please choose a number between 8 and 128"));
   };
-}
+};
 
 function confirmSpecial(){
     //does this password have any special characters?
@@ -85,6 +82,7 @@ function confirmUppercase(){
 };
 function confirmNumber(){
     confirmNumber1 = confirm("Press OK if this password has any numbers"); 
+    
 };
 
 
@@ -94,6 +92,7 @@ function validateUserChoice(){
   //4
   if(confirmSpecial() && confirmLowercase() && confirmUppercase() && confirmNumber()){
     userChoice = specialchar.concat(number,lowercaseChar,uppercaseChar);
+    
   }
 
   //3
