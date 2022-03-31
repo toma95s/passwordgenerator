@@ -7,11 +7,11 @@ var lowercaseChar = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o"
 var uppercaseChar = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-var confirmSpecial1
-var confirmLower
-var confirmUpper 
-var confirmNumber1 
-var userChoice
+var confirmSpecial1;
+var confirmLower;
+var confirmUpper;
+var confirmNumber1; 
+var userChoice;
 
 // Write password to the #password input
 function writePassword() {
@@ -40,17 +40,22 @@ function generatePassword(){
         //at least one character type should be selected
       //a password is generated that matches the selected criteria
         //How?
-    var passwordlengthrand = ""
+    var finalpassword = ""
     for(var i= 0; i<charlen; i++){
-      var  passwordlengthrand = userChoice[Math.floor(Math.random()* userChoice.length)];
-       console.log(passwordlengthrand);
+      var  passwordlengthrand = Math.floor(Math.random()* validateUserChoice.length);
+      finalpassword += validateUserChoice[passwordlengthrand];
+
+       //console.log(passwordlengthrand);
     }
-    return passwordlengthrand;
+    return finalpassword;
 };
 
 function issuePrompts(){
-   characterLengthPrompt();
-   validateUserChoice();
+    characterLengthPrompt();
+    confirmSpecial();
+    confirmLowercase();
+    confirmUppercase();
+    confirmNumber();
    
 
 };
