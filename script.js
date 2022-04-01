@@ -11,7 +11,7 @@ var confirmSpecial1;
 var confirmLower;
 var confirmUpper;
 var confirmNumber1; 
-var userChoice;
+var userChoice = [];
 
 // Write password to the #password input
 function writePassword() {
@@ -42,8 +42,8 @@ function generatePassword(){
         //How?
     var finalpassword = ""
     for(var i= 0; i<charlen; i++){
-      var  passwordlengthrand = Math.floor(Math.random()* validateUserChoice.length);
-      finalpassword += validateUserChoice[passwordlengthrand];
+      var  passwordlengthrand = Math.floor(Math.random()* userChoice.length);
+      finalpassword += userChoice[passwordlengthrand];
 
        //console.log(passwordlengthrand);
     }
@@ -75,18 +75,43 @@ function confirmSpecial(){
     //does this password have any special characters?
     //for input
     confirmSpecial1 = confirm("Press OK if this has any special characters");
+   if(confirmSpecial1){
+     alert("You have added special characters to your password")
+   }
+   else{
+     alert("No special characters will be added")
+   }
+
 };
 
 function confirmLowercase(){
   // confirm whether or not to include lowercase, ???
   confirmLower = confirm("Press OK if this password has any lowercase letters");
+  if(confirmLower){
+    alert("You have added lowercase letters to your password")
+  }
+  else{
+    alert("No lowercase letters will be added")
+  }
 };
 function confirmUppercase(){
     confirmUpper = confirm("Press OK if this password has any uppercase letters");
+    if(confirmUpper){
+      alert("You have added uppercase letters to your password")
+    }
+    else{
+      alert("No uppercase letters will be added")
+    }
 
 };
 function confirmNumber(){
     confirmNumber1 = confirm("Press OK if this password has any numbers"); 
+    if(confirmNumber1){
+      alert("You have added numbers to your password")
+    }
+    else{
+      alert("No numbers will be added")
+    }
     
 };
 
@@ -95,60 +120,60 @@ function validateUserChoice(){
   //make sure that at least one character type should be selected
 
   //4
-  if(confirmSpecial() && confirmLowercase() && confirmUppercase() && confirmNumber()){
+  if(confirmSpecial1 && confirmLower && confirmUpper && confirmNumber1){
     userChoice = specialchar.concat(number,lowercaseChar,uppercaseChar);
-    
+   
   }
 
   //3
-  else if (confirmSpecial() && confirmLowercase() && confirmUppercase()){
+  else if (confirmSpecial1 && confirmLower && confirmUpper){
       userChoice = specialchar.concat(lowercaseChar,uppercaseChar);
   }
-  else if (confirmSpecial()&& confirmLowercase() && confirmNumber()){
+  else if (confirmSpecial1&& confirmLower && confirmNumber1){
       userChoice = specialchar.concat(lowercaseChar,number);
   }
-  else if (confirmSpecial() && confirmNumber() && confirmUppercase()){
+  else if (confirmSpecial1 && confirmNumber1 && confirmUpper){
       userChoice = specialchar.concat(number,uppercaseChar);
   }
-  else if (confirmLowercase() && confirmUppercase() && confirmNumber()){
+  else if (confirmLower && confirmUpper && confirmNumber1){
       userChoice = lowercaseChar.concat(uppercaseChar,number);
   }
   //2
 
-  else if (confirmSpecial() && confirmLowercase){
+  else if (confirmSpecial1 && confirmLowercase){
       userChoice = specialchar.concat(lowercaseChar);
   }
-  else if (confirmSpecial() && confirmUppercase()){
+  else if (confirmSpecial1 && confirmUpper){
       userChoice = specialchar.concat(uppercaseChar);
   }
-  else if (confirmSpecial() && confirmNumber()){
+  else if (confirmSpecial1 && confirmNumber1){
       userChoice = specialchar.concat(number);
   }
-  else if (confirmLowercase() && confirmUppercase()){
+  else if (confirmLower && confirmUpper){
       userChoice = lowercaseChar.concat(uppercaseChar);
   }
-  else if (confirmLowercase() && confirmNumber()){
+  else if (confirmLower && confirmNumber1){
       userChoice = lowercaseChar.concat(number);
   }
-  else if (confirmUppercase() && confirmNumber()){
+  else if (confirmUpper && confirmNumber1){
       userChoice = uppercaseChar.concat(number);
   }
 
   //1
 
-  else if (confirmSpecial()){
+  else if (confirmSpecial1){
       userChoice = specialchar;
   }
-  else if (confirmLowercase()){
+  else if (confirmLower){
       userChoice = lowercaseChar;
   }
-  else if (confirmUppercase()){
+  else if (confirmUpper){
       userChoice = uppercaseChar;
   }
-  else if (confirmNumber()){
+  else if (confirmNumber1){
       userChoice = number;
   }
-  else if (confirmSpecial() && confirmLowercase() && confirmUppercase() && confirmNumber() === false){
+  else if (confirmSpecial1 && confirmLower && confirmUpper && confirmNumber1 === false){
       userChoice = alert("You must choose at least 1 character type that must be selected.");
   }
 
