@@ -28,7 +28,7 @@ generateBtn.addEventListener("click", writePassword);
 function generatePassword(){
   // THEN I am presented with a series of prompts for password criteria
     //issue prompts to user
-    issuePrompts()
+  issuePrompts()
       //prompted for the length
         //at least 8 characters and no more than 128 characters
       //asked for character type
@@ -40,14 +40,17 @@ function generatePassword(){
         //at least one character type should be selected
       //a password is generated that matches the selected criteria
         //How?
-    var finalpassword = ""
-    for(var i= 0; i<charlen; i++){
-      var  passwordlengthrand = Math.floor(Math.random()* userChoice.length);
+  if(validateUserChoice()){
+    let finalpassword = ""
+    for(let i= 0; i<charlen; i++){
+      let  passwordlengthrand = Math.floor(Math.random()* userChoice.length);
       finalpassword += userChoice[passwordlengthrand];
-
-       //console.log(passwordlengthrand);
-    }
+    }    //console.log(passwordlengthrand);
     return finalpassword;
+  }
+   else if (validateUserChoice() === false){
+    return finalpassword += userChoice
+   }
 };
 
 function issuePrompts(){
@@ -56,7 +59,6 @@ function issuePrompts(){
     confirmLowercase();
     confirmUppercase();
     confirmNumber();
-   
 
 };
 
@@ -64,9 +66,11 @@ function issuePrompts(){
 function characterLengthPrompt(){
   //at least 8 characters and no more than 128 characters???
   //ask for input
+  
+  var answer=
   charlen = parseInt(prompt("How many characters is your password? This password must be 8 characters and no more than 128 characters."));
   while(charlen < 8 || charlen > 128){
-      alert("This password has the incorrect amount of characters")
+      alert("This password has the incorrect amount of characters");
       charlen = parseInt(prompt("Please choose a number between 8 and 128"));
   };
 };
@@ -76,10 +80,12 @@ function confirmSpecial(){
     //for input
     confirmSpecial1 = confirm("Press OK if this has any special characters");
    if(confirmSpecial1){
-     alert("You have added special characters to your password")
+     alert("You have added special characters to your password");
+     userChoice = userChoice.concat(specialchar);
    }
    else{
-     alert("No special characters will be added")
+     alert("No special characters will be added");
+     return false;
    }
 
 };
@@ -88,29 +94,35 @@ function confirmLowercase(){
   // confirm whether or not to include lowercase, ???
   confirmLower = confirm("Press OK if this password has any lowercase letters");
   if(confirmLower){
-    alert("You have added lowercase letters to your password")
+    alert("You have added lowercase letters to your password");
+    userChoice = userChoice.concat(lowercaseChar);
   }
   else{
-    alert("No lowercase letters will be added")
+    alert("No lowercase letters will be added");
+    return false;
   }
 };
 function confirmUppercase(){
     confirmUpper = confirm("Press OK if this password has any uppercase letters");
     if(confirmUpper){
-      alert("You have added uppercase letters to your password")
+      alert("You have added uppercase letters to your password");
+      userChoice = userChoice.concat(uppercaseChar);
     }
     else{
-      alert("No uppercase letters will be added")
+      alert("No uppercase letters will be added");
+      return false;
     }
 
 };
 function confirmNumber(){
     confirmNumber1 = confirm("Press OK if this password has any numbers"); 
     if(confirmNumber1){
-      alert("You have added numbers to your password")
+      alert("You have added numbers to your password");
+      userChoice = userChoice.concat(number);
     }
     else{
-      alert("No numbers will be added")
+      alert("No numbers will be added");
+      return false;
     }
     
 };
@@ -118,8 +130,13 @@ function confirmNumber(){
 
 function validateUserChoice(){
   //make sure that at least one character type should be selected
+  if (confirmSpecial1 && confirmLower && confirmUpper && confirmNumber1 === false){
+    userChoice = "You must choose at least 1 character type that must be selected.";
+    return userChoice;
+  }
 
   //4
+  /*
   if(confirmSpecial1 && confirmLower && confirmUpper && confirmNumber1){
     userChoice = specialchar.concat(number,lowercaseChar,uppercaseChar);
    
@@ -175,6 +192,6 @@ function validateUserChoice(){
   }
   else if (confirmSpecial1 && confirmLower && confirmUpper && confirmNumber1 === false){
       userChoice = alert("You must choose at least 1 character type that must be selected.");
-  }
+  }*/
 
 };
