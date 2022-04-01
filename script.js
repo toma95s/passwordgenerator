@@ -1,6 +1,4 @@
-
-
-var charlen;
+var charlen = 0;
 var specialchar = ["!","@","#","$","%","^","&","*","(",")"];
 var number = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 var lowercaseChar = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
@@ -48,7 +46,7 @@ function generatePassword(){
     }    //console.log(passwordlengthrand);
     return finalpassword;
   }
-   else if (validateUserChoice() === false){
+   else{
     return finalpassword += userChoice
    }
 };
@@ -67,7 +65,7 @@ function characterLengthPrompt(){
   //at least 8 characters and no more than 128 characters???
   //ask for input
   
-  var answer=
+ 
   charlen = parseInt(prompt("How many characters is your password? This password must be 8 characters and no more than 128 characters."));
   while(charlen < 8 || charlen > 128){
       alert("This password has the incorrect amount of characters");
@@ -78,7 +76,7 @@ function characterLengthPrompt(){
 function confirmSpecial(){
     //does this password have any special characters?
     //for input
-    confirmSpecial1 = confirm("Press OK if this has any special characters");
+    var confirmSpecial1 = confirm("Press OK if this has any special characters");
    if(confirmSpecial1){
      alert("You have added special characters to your password");
      userChoice = userChoice.concat(specialchar);
@@ -134,64 +132,4 @@ function validateUserChoice(){
     userChoice = "You must choose at least 1 character type that must be selected.";
     return userChoice;
   }
-
-  //4
-  /*
-  if(confirmSpecial1 && confirmLower && confirmUpper && confirmNumber1){
-    userChoice = specialchar.concat(number,lowercaseChar,uppercaseChar);
-   
-  }
-
-  //3
-  else if (confirmSpecial1 && confirmLower && confirmUpper){
-      userChoice = specialchar.concat(lowercaseChar,uppercaseChar);
-  }
-  else if (confirmSpecial1&& confirmLower && confirmNumber1){
-      userChoice = specialchar.concat(lowercaseChar,number);
-  }
-  else if (confirmSpecial1 && confirmNumber1 && confirmUpper){
-      userChoice = specialchar.concat(number,uppercaseChar);
-  }
-  else if (confirmLower && confirmUpper && confirmNumber1){
-      userChoice = lowercaseChar.concat(uppercaseChar,number);
-  }
-  //2
-
-  else if (confirmSpecial1 && confirmLowercase){
-      userChoice = specialchar.concat(lowercaseChar);
-  }
-  else if (confirmSpecial1 && confirmUpper){
-      userChoice = specialchar.concat(uppercaseChar);
-  }
-  else if (confirmSpecial1 && confirmNumber1){
-      userChoice = specialchar.concat(number);
-  }
-  else if (confirmLower && confirmUpper){
-      userChoice = lowercaseChar.concat(uppercaseChar);
-  }
-  else if (confirmLower && confirmNumber1){
-      userChoice = lowercaseChar.concat(number);
-  }
-  else if (confirmUpper && confirmNumber1){
-      userChoice = uppercaseChar.concat(number);
-  }
-
-  //1
-
-  else if (confirmSpecial1){
-      userChoice = specialchar;
-  }
-  else if (confirmLower){
-      userChoice = lowercaseChar;
-  }
-  else if (confirmUpper){
-      userChoice = uppercaseChar;
-  }
-  else if (confirmNumber1){
-      userChoice = number;
-  }
-  else if (confirmSpecial1 && confirmLower && confirmUpper && confirmNumber1 === false){
-      userChoice = alert("You must choose at least 1 character type that must be selected.");
-  }*/
-
 };
