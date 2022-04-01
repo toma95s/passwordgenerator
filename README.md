@@ -27,3 +27,4 @@ THEN the password is either displayed in an alert or written to the page
 
 SCREENSHOT
 
+![image](https://user-images.githubusercontent.com/101033224/161180258-fb008204-6f16-429b-922f-350c86ed9154.png)
