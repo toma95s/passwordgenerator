@@ -1,6 +1,6 @@
 # PWGenerator
 
-A fun little password generator so you don't have to work too hard to come up with a safe and secure password! 🤯 🚫
+<h5>A fun little password generator so you don't have to work too hard to come up with a safe and secure password! 🤯 🚫</h5>
 
 <img width="80" alt = DeployedLink src =https://img.shields.io/badge/-Deployed%20Link-purple> https://toma95s.github.io/PWGenerator/
 
