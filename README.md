@@ -1,13 +1,13 @@
 # PWGenerator
 
-A fun little password generator so you don't have to work too hard to come up with a safe and secure password! 
+A fun little password generator so you don't have to work too hard to come up with a safe and secure password! 🤯 🚫
 
 <img width="80" alt = DeployedLink src =https://img.shields.io/badge/-Deployed%20Link-purple> https://toma95s.github.io/PWGenerator/
 
 <img width="80" alt = githublink src = https://img.shields.io/badge/-GitHub%20Link-pink> https://github.com/toma95s/PWGenerator
 
 
-<h2> Technologies Used </h2>
+<h2> Technologies Used ⚙️ ⌨️</h2>
 
 <img width="60" alt="badge2" src="https://img.shields.io/badge/-JavaScript-blue">
 
@@ -15,15 +15,15 @@ A fun little password generator so you don't have to work too hard to come up wi
 
 <img width="25" alt="badge4" src="https://img.shields.io/badge/-CSS-orange"> 
 
-User Story:
+<h2>User Story:</h2>
 
-AS AN employee with access to sensitive data
+<h5>AS AN employee with access to sensitive data
 I WANT to randomly generate a password that meets certain criteria
-SO THAT I can create a strong password that provides greater security
+SO THAT I can create a strong password that provides greater security</h5>
 
-Acceptance Criteria:
+<h2>Acceptance Criteria:</h2>
 
-GIVEN I need a new, secure password
+<h5>GIVEN I need a new, secure password
 WHEN I click the button to generate a password
 THEN I am presented with a series of prompts for password criteria
 WHEN prompted for password criteria
@@ -37,7 +37,7 @@ THEN my input should be validated and at least one character type should be sele
 WHEN all prompts are answered
 THEN a password is generated that matches the selected criteria
 WHEN the password is generated
-THEN the password is either displayed in an alert or written to the page
+THEN the password is either displayed in an alert or written to the page</h5>
 
 
 <h2>Code Snippet</h2>
