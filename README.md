@@ -42,7 +42,7 @@ THEN the password is either displayed in an alert or written to the page</h5>
 
 <h2>Code Snippet</h2>
 
-Here you can see the user choice get validated. Function for minimum one character to be chosen is also shown. Function to issue prompts and confirm choices are also shown.
+<h5>Here you can see the user choice get validated. Function for minimum one character to be chosen is also shown. Function to issue prompts and confirm choices are also shown.</h5>
 
 <img width="437" alt="Screen Shot 2022-04-29 at 1 08 13 AM" src="https://user-images.githubusercontent.com/101033224/165907282-f8cdc1a1-31fc-4fc1-9a96-53570cd15cff.png">
 
