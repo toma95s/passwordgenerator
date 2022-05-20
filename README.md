@@ -1,4 +1,4 @@
-# PWGenerator
+# Password Generator
 
 <h5>A fun little password generator so you don't have to work too hard to come up with a safe and secure password! 🤯 🚫</h5>
 
